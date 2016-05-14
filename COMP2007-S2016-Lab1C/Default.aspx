@@ -43,16 +43,18 @@
                 <form class="form" id="form1" runat="server">
                     <div class="form-group">
                         <asp:Label ID="FirstNameLabel" Text="First Name" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="FirstNameTextBox" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="FirstNameTextBox" required="true" runat="server" CausesValidation="True" />
                     </div>
                     <div class="form-group">
                         <asp:Label ID="LastNameLabel" Text="Last Name" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="LastNameTextBox" required="true"  runat="server" CausesValidation="True" />
                     </div>
                     <div class="form-group">
                         <asp:Label ID="AgeLabel" Text="Age" runat="server" />
-                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="AgeTextBox" required="true"  runat="server" CausesValidation="True" />
+                        <asp:RangeValidator ForeColor="Red" ID="AgeRangeValidator" runat="server" ErrorMessage="Age must be valid between 20 and 120" MinimumValue="20" MaximumValue="120" Type="Integer" ControlToValidate="AgeTextBox"></asp:RangeValidator>
                     </div>
+                    <br />
                     <asp:Button CssClass="btn btn-primary" ID="SubmitButton" Text="Submit" runat="server" OnClick="SubmitButton_Click" />
                     <br />
                     <hr />
